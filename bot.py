@@ -63,7 +63,8 @@ async def handle_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_question(update, context)
 
 # เริ่มระบบ
-BOT_TOKEN = "7720399028:AAFE07JsG2qR6XhzWs0ZpaQlc30apamGZpc"
+import os
+BOT_TOKEN = os.environ.get("7720399028:AAFE07JsG2qR6XhzWs0ZpaQlc30apamGZpc")
 
 app = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
